@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-size: 1.6rem;
+    background: rgb(2,0,36);
+    background: linear-gradient(40deg, rgba(2,0,36,1) 0%, rgb(73, 10, 41) 52%, rgb(11, 142, 168) 100%);
+    color: white;
+}
+.PrincipalStage {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+}
+
+.image-container {
+    max-width: min(90vw, 45rem);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: -1rem;
+}
+.image-container img {
+    width: 80%;
+}
+
+.msg-box {
+    max-width: min(90vw, 50rem);
+    background: rgba(255,255,255,.8);
+    border-radius: 2rem;
+    border: .2rem solid rgb(38, 39, 44);
+    padding: 2rem;
+    outline: .5rem solid white;
+    color: rgb(38, 39, 44);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+}
+
+.msg-box p {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    /* border-right: 0.15em solid #18bdec; */
+    /* animation: typing 4s steps(38) 1s 1 normal both, blink 1s steps(1) infinite; */
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
