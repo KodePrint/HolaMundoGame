@@ -1,11 +1,35 @@
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 import PrincipalStageStyles from '../styles/PrincipalStage.css'
 import NicoPixels from '../assets/images/Nico.png'
+import Loading from '../containers/Loading'
+
+
 const PrincipalStage = () => {
+
+    const navigate = useNavigate()
     const [msg, setMsg] = useState(0)
+    const [loading, setLoading] = useState(false);
+
+
+    const handleClick = () => {
+        setMsg(msg + 1)
+        console.log(msg)
+        if (msg === 3) {
+            setLoading(!loading)
+            loadStage()
+        }
+    }
+
+    function loadStage() {
+        setTimeout(() => {
+            navigate('/level-one')
+        }, 2000);
+    }
 
     return (
-        <div className='PrincipalStage'>
+        <div className='PrincipalStage' onClick={handleClick}>
+            { loading && <Loading/>}
             <figure className='image-container'>
                 <img src={NicoPixels} alt="Nicolas Schurmann" />
             </figure>
