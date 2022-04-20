@@ -1,0 +1,8 @@
+.Shoot {
+    animation: moveShoot 1s;
+}
+
+@keyframes moveShoot {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-50rem);}
+}

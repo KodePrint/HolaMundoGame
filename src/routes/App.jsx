@@ -5,21 +5,27 @@ import Layout from '../containers/Layout';
 import Home from '../pages/Home';
 import PrincipalStage from '../pages/PrincipalStage';
 import LevelOne from '../pages/LevelOne';
+import useInitialState from '../hooks/useInitialState';
+import TheGameContext from '../context/TheGameContext';
 
 const App = () => {
+  const initialState = useInitialState();
+
   return (
-    <BrowserRouter>
-        <Layout>
-          <Routes>
-            <Route exact path='/' element={<Home/>} />
-            <Route exact path='principal-stage/' element={<PrincipalStage/>} />
-            <Route exact path='level-one/' element={<LevelOne/>} />
-            <Route exact path='principal-stage/' element={<PrincipalStage/>} />
-            <Route exact path='principal-stage/' element={<PrincipalStage/>} />
-            <Route path='*' element={<h1>Not found</h1>}/>
-          </Routes>
-        </Layout>
-    </BrowserRouter>
+    <TheGameContext.Provider value={initialState}>
+      <BrowserRouter>
+          <Layout>
+            <Routes>
+              <Route exact path='/' element={<Home/>} />
+              <Route exact path='principal-stage/' element={<PrincipalStage/>} />
+              <Route exact path='level-one/' element={<LevelOne/>} />
+              <Route exact path='principal-stage/' element={<PrincipalStage/>} />
+              <Route exact path='principal-stage/' element={<PrincipalStage/>} />
+              <Route path='*' element={<h1>Not found</h1>}/>
+            </Routes>
+          </Layout>
+      </BrowserRouter>
+    </TheGameContext.Provider>
   );
 }
 

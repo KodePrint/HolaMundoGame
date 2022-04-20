@@ -1,0 +1,21 @@
+.Hero {
+    margin-top: auto;
+    width: 5rem;
+    height: 5rem;
+    position: relative;
+}
+.Hero img {
+    width: 100%;
+    z-index: 1000;
+}
+
+.Shoot {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background: red;
+    top: .5rem;
+    left: 1.5rem;
+    z-index: -1;
+    transition: .6s all ease;
+}
